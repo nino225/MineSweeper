@@ -54,7 +54,31 @@ bool Field::IsGameClear() const
 
 void Field::Open(int row, int col)
 {
-    GetGrid(row, col)->OnOpened();
+    auto square = GetGrid(row, col);
+    
+    square->OnOpened();
+    
+    if (
+        nearSquareMines(row, col) == 0
+        )
+    {
+        // 自分の周りも開く
+        for (int r = max(row - 1, 0); r <= min(row + 1, rows - 1); r++) {
+            for (int c = max(col - 1, 0); c <= min(col + 1, cols - 1); c++)
+            {
+                // 自分自身はスキップ
+                if (r == row && c == col) continue;
+                
+                // 開かれていなければ開く
+                if (
+                    GetGrid(r, c)->GetStatus() != Square::SquareStatus::Opened
+                    )
+                    Open(r, c);
+            }
+        }
+    }
+    
+
 }
 
 bool isContained (int row, int col, vector<pair<int, int>>& minePositions)
