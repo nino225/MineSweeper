@@ -25,6 +25,7 @@ GameManager* GameManager::instance = new GameManager ();
 void GameManager::init()
 {
     field = new Field (NUM_ROWS, NUM_COLS, NUM_MINES);
+    field->ShowGrid();
 }
 
 void GameManager::GoGame ()
