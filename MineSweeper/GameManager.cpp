@@ -59,6 +59,9 @@ void GameManager::init()
     mines = inputNumber(min(MAX_MINES, rows * cols), "地雷の数をしてください ... : ");
 
     field = new Field (rows, cols, mines);
+    
+    cout << endl;
+    field->ShowGrid();
 }
 
 void GameManager::GoGame ()

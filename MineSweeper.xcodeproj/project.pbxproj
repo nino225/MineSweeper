@@ -87,6 +87,7 @@
 				AA9D54431A4E840C00395FAE /* Sources */,
 				AA9D54441A4E840C00395FAE /* Frameworks */,
 				AA9D54451A4E840C00395FAE /* CopyFiles */,
+				AAA251DA1A4EF6DD00B83CE0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -127,6 +128,22 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AAA251DA1A4EF6DD00B83CE0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp $BUILT_PRODUCTS_DIR/MineSweeper $SRCROOT/bin/MineSweeper";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA9D54431A4E840C00395FAE /* Sources */ = {
@@ -250,6 +267,7 @@
 				AA9D54501A4E840C00395FAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
