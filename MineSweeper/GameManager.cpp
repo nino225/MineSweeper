@@ -22,10 +22,43 @@ GameManager::GameManager()
 
 GameManager* GameManager::instance = new GameManager ();
 
+int inputNumber (int maxNum, string message)
+{
+    int number;
+    
+    while (true) {
+        cout << message;
+        
+        string input;
+        cin >> input;
+        
+        number = atoi(input.c_str());
+        
+        if (0 < number && number <= maxNum)
+        {
+            break;
+        }
+        else
+        {
+            cout << "1 ~ " << maxNum << "の範囲の数字を入力してください" << endl;
+        }
+    }
+    return number;
+}
+
 void GameManager::init()
 {
     isGameOver = false;
-    field = new Field (NUM_ROWS, NUM_COLS, NUM_MINES);
+    
+    int rows, cols, mines;
+
+    cout << "フィールドの大きさを決定します。" << endl;
+    
+    cols = inputNumber(MAX_COLS, "列数を指定してください ... : ");
+    rows = inputNumber(MAX_ROWS, "行数を指定してください ... : ");
+    mines = inputNumber(min(MAX_MINES, rows * cols), "地雷の数をしてください ... : ");
+
+    field = new Field (rows, cols, mines);
 }
 
 void GameManager::GoGame ()

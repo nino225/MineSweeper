@@ -14,9 +14,6 @@
 class GameManager
 {
 public:
-    const int NUM_ROWS = 5;
-    const int NUM_COLS = 5;
-    const int NUM_MINES = 5;
     
     const bool IS_DEBUG_MODE = false;
     
@@ -38,6 +35,11 @@ public:
     void GameReset ();
     
 private:
+    
+    const int MAX_ROWS = 26;
+    const int MAX_COLS = 26;
+    const int MAX_MINES = 26 * 26;
+    
     enum InputType
     {
         None,
