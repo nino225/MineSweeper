@@ -23,6 +23,9 @@ public:
     
     void ShowGrid () const;
     
+    //解答を表示
+    void ShowGridMine () const;
+    
 private:
     int rows;
     int cols;
@@ -32,6 +35,9 @@ private:
     
     void initGrid ();
     
+    int nearSquareMines (int row, int col) const;
+    
+    char getStatusCharacter(int row, int col) const;
 };
 
 #endif /* defined(__MineSweeper__Field__) */

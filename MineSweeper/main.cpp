@@ -15,5 +15,9 @@ int main(int argc, const char * argv[]) {
     
     field.ShowGrid();
     
+    std::cout << "\n\n";
+    
+    field.ShowGridMine();
+    
     return 0;
 }

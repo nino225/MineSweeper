@@ -12,36 +12,13 @@
 Square::Square (int row, int col, Square::SquareType type)
 : row(row), col(col), type(type)
 {
-    status = Invisible;
+//    status = Invisible;
+    status = Opened;
 }
 
 Square::SquareStatus Square::GetStatus()
 {
     return status;
-}
-
-char Square::GetStatusCharacter()
-{
-    char ret;
-    switch (status) {
-        case Opened:
-            //TODO: 周りの地雷の数を計算する機構をつくったらそれを表示
-            ret = '0';
-            if (type == Mine) ret = '1';
-            break;
-            
-        case MineChecker:
-            ret = 'x';
-            break;
-            
-        case Invisible:
-            ret = ' ';
-            
-        default:
-            break;
-    }
-    
-    return ret;
 }
 
 Square::SquareType Square::GetType()

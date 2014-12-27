@@ -29,11 +29,7 @@ public:
     
     SquareStatus GetStatus ();
     
-    char GetStatusCharacter ();
-    
     SquareType GetType ();
-    
-    char GetTypeCharacter ();
     
     void OnOpened ();
     
