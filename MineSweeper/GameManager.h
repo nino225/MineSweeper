@@ -18,7 +18,7 @@ public:
     const int NUM_COLS = 5;
     const int NUM_MINES = 5;
     
-    const bool IS_DEBUG_MODE = false;
+    const bool IS_DEBUG_MODE = true;
     
     enum TurnStatus
     {
@@ -70,7 +70,8 @@ private:
     void onShowGrid ();
     void onEndTurn ();
     void gameOver ();
-
+    void gameClear ();
+    
     void open ();
     
 };

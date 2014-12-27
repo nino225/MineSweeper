@@ -34,6 +34,23 @@ int Field::GetCols() const
     return cols;
 }
 
+bool Field::IsGameClear() const
+{
+    for (int row = 0; row < rows; row++) {
+        for (int col = 0; col < cols; col++) {
+            Square* square = GetGrid(row, col);
+            if (
+                square->GetStatus() != Square::SquareStatus::Opened &&
+                square->GetType() == Square::SquareType::None
+                )
+            {
+                return false;
+            }
+        }
+    }
+    
+    return true;
+}
 
 bool isContained (int row, int col, vector<pair<int, int>>& minePositions)
 {

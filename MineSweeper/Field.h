@@ -37,7 +37,10 @@ public:
     void ShowGridMine () const;
     
     int GetRows () const;
+    
     int GetCols () const;
+    
+    bool IsGameClear () const;
     
 private:
     int rows;

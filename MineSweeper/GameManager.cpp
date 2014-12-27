@@ -220,6 +220,11 @@ void GameManager::open()
     if (square->GetType() != Square::SquareType::Mine)
     {
         square->OnOpened();
+        
+        if (field->IsGameClear())
+        {
+            gameClear();
+        }
     }
     else
     {
@@ -230,6 +235,12 @@ void GameManager::open()
 void GameManager::gameOver()
 {
     cout << " ゲームオーバー" << endl;
+    isGameOver = true;
+}
+
+void GameManager::gameClear ()
+{
+    cout << " ゲームクリアー" << endl;
     isGameOver = true;
 }
 

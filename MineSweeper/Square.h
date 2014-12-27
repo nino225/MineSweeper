@@ -14,7 +14,6 @@ public:
     enum SquareType
     {
         None,
-        Number,
         Mine
     };
     
