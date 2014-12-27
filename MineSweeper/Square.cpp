@@ -12,8 +12,7 @@
 Square::Square (int row, int col, Square::SquareType type)
 : row(row), col(col), type(type)
 {
-//    status = Invisible;
-    status = Opened;
+    status = Invisible;
 }
 
 Square::SquareStatus Square::GetStatus()

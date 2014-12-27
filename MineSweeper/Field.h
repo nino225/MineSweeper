@@ -21,9 +21,19 @@ public:
     
     Square* GetGrid (int row, int col) const;
     
+    /*
+     @brief
+        現在のグリッドの状態を表示
+     */
     void ShowGrid () const;
     
-    //解答を表示
+    /*
+     @brief
+        解答を表示
+     @descriptor
+        地雷の場所に'x'
+        それ以外の場所は付近の地雷の数を表示
+     */
     void ShowGridMine () const;
     
 private:

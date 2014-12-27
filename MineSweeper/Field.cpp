@@ -133,7 +133,7 @@ void Field::ShowGridMine () const
             if (GetGrid(row, col)->GetType() == Square::SquareType::Mine)
                 squareType = 'x';
             else
-                squareType = ' ';
+                squareType = '0' + nearSquareMines(row, col);
             
             cout << (char)squareType << " ";
         }
@@ -155,7 +155,7 @@ char Field::getStatusCharacter(int row, int col) const
             break;
             
         case Square::SquareStatus::Invisible:
-            ret = ' ';
+            ret = '?';
             
         default:
             break;
