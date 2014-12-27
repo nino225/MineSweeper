@@ -26,6 +26,7 @@ void GameManager::init()
 {
     isGameOver = false;
     field = new Field (NUM_ROWS, NUM_COLS, NUM_MINES);
+    field->ShowGrid();
 }
 
 void GameManager::GoGame ()
