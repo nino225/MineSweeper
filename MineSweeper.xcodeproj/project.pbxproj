@@ -10,6 +10,7 @@
 		AA9D544B1A4E840C00395FAE /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA9D544A1A4E840C00395FAE /* main.cpp */; };
 		AA9D54531A4E845E00395FAE /* Field.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA9D54511A4E845E00395FAE /* Field.cpp */; };
 		AA9D54561A4E84F400395FAE /* Square.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA9D54541A4E84F400395FAE /* Square.cpp */; };
+		AA9D54591A4EA11900395FAE /* GameManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AA9D54571A4EA11900395FAE /* GameManager.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		AA9D54521A4E845E00395FAE /* Field.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Field.h; sourceTree = "<group>"; };
 		AA9D54541A4E84F400395FAE /* Square.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Square.cpp; sourceTree = "<group>"; };
 		AA9D54551A4E84F400395FAE /* Square.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Square.h; sourceTree = "<group>"; };
+		AA9D54571A4EA11900395FAE /* GameManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
+		AA9D54581A4EA11900395FAE /* GameManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				AA9D54521A4E845E00395FAE /* Field.h */,
 				AA9D54541A4E84F400395FAE /* Square.cpp */,
 				AA9D54551A4E84F400395FAE /* Square.h */,
+				AA9D54571A4EA11900395FAE /* GameManager.cpp */,
+				AA9D54581A4EA11900395FAE /* GameManager.h */,
 			);
 			path = MineSweeper;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA9D54531A4E845E00395FAE /* Field.cpp in Sources */,
+				AA9D54591A4EA11900395FAE /* GameManager.cpp in Sources */,
 				AA9D54561A4E84F400395FAE /* Square.cpp in Sources */,
 				AA9D544B1A4E840C00395FAE /* main.cpp in Sources */,
 			);

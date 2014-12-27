@@ -7,17 +7,15 @@
 //
 
 #include <iostream>
-#include "Field.h"
+#include "GameManager.h"
 
 int main(int argc, const char * argv[]) {
-
-    Field field(5, 5, 5);
     
-    field.ShowGrid();
+    GameManager* gameManager = GameManager::getInstance();
     
-    std::cout << "\n\n";
+    gameManager->GoGame();
     
-    field.ShowGridMine();
+    
     
     return 0;
 }

@@ -15,7 +15,7 @@
 class Field
 {
 public:
-    const char ORIGIN_COL_LABEL = 'a';
+    const static char ORIGIN_COL_LABEL = 'a';
     
     Field (int rows, int cols, int mines);
     
@@ -35,6 +35,9 @@ public:
         それ以外の場所は付近の地雷の数を表示
      */
     void ShowGridMine () const;
+    
+    int GetRows () const;
+    int GetCols () const;
     
 private:
     int rows;

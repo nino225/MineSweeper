@@ -24,6 +24,15 @@ Square* Field::GetGrid (int row, int col) const
     return grid[row][col];
 }
 
+int Field::GetRows() const
+{
+    return rows;
+}
+
+int Field::GetCols() const
+{
+    return cols;
+}
 
 
 bool isContained (int row, int col, vector<pair<int, int>>& minePositions)
@@ -84,9 +93,9 @@ void Field::ShowGrid() const
     }
     cout << endl;
     
-    for (int row = rows - 1; row >= 0; row--) {
+    for (int row = 0; row < rows; row++) {
         // show row label
-        std::cout << rows - 1 - row << " ";
+        std::cout << row << " ";
         for (int col = 0; col < cols; col++)
         {
             cout << (char)getStatusCharacter (row, col) << " ";
@@ -124,9 +133,9 @@ void Field::ShowGridMine () const
     }
     cout << endl;
     
-    for (int row = rows - 1; row >= 0; row--) {
+    for (int row = 0; row < rows; row++) {
         // show row label
-        std::cout << rows - 1 - row << " ";
+        std::cout << row << " ";
         for (int col = 0; col < cols; col++)
         {
             char squareType;
