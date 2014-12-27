@@ -15,7 +15,7 @@ class GameManager
 {
 public:
     
-    const bool IS_DEBUG_MODE = false;
+    const bool IS_DEBUG_MODE = true;
     
     enum TurnStatus
     {
@@ -72,7 +72,8 @@ private:
     void onShowGrid ();
     void onEndTurn ();
     void gameOver ();
-
+    void gameClear ();
+    
     void open ();
     
 };
