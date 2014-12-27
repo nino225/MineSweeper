@@ -17,13 +17,14 @@ GameManager* GameManager::getInstance()
 
 GameManager::GameManager()
 {
-    nextTurnStatus = StartGame;
+    GameReset();
 };
 
 GameManager* GameManager::instance = new GameManager ();
 
 void GameManager::init()
 {
+    isGameOver = false;
     field = new Field (NUM_ROWS, NUM_COLS, NUM_MINES);
 }
 
@@ -32,6 +33,11 @@ void GameManager::GoGame ()
     while (!isGameOver) {
         goNextStatus();
     }
+}
+
+void GameManager::GameReset()
+{
+    nextTurnStatus = StartGame;
 }
 
 void GameManager::goNextStatus()
@@ -126,49 +132,57 @@ void GameManager::onWaitInput()
                 );
         
         // 指定されたマスが開かれているかどうかをチェック
-        if (field->GetGrid(row, col)->GetStatus() != Square::SquareStatus::Opened)
-        {
-            break;
-        }
-        else
+        if (field->GetGrid(row, col)->GetStatus() == Square::SquareStatus::Opened)
         {
             cout << "指定されたマスはすでに開かれています。できることはありません。" << endl;
+            continue;
         }
-    
-    };
-    
-    inputCol = col;
-    inputRow = row;
-    
-    
-    
-    InputType type = None;
+        
+        inputCol = col;
+        inputRow = row;
+        
+        
+        
+        InputType type = None;
 
-    do{
-        cout << "開く場合はoを、地雷チェックの場合はxを入力してください : ";
-        
-        string input;
-        cin >> input;
-        
-        if (input.size() > 0)
-        {
-            switch (input[0]) {
-                case 'o':
-                    type = Open;
-                    break;
-                    
-                case 'x':
-                    type = PutMineChecker;
-                    break;
-                    
-                default:
-                    break;
+        do{
+            cout << "開く場合はoを、地雷チェックの場合はxを入力してください : ";
+            
+            string input;
+            cin >> input;
+            
+            if (input.size() > 0)
+            {
+                switch (input[0]) {
+                    case 'o':
+                        type = Open;
+                        break;
+                        
+                    case 'x':
+                        type = PutMineChecker;
+                        break;
+                        
+                    default:
+                        break;
+                }
             }
+            
+        } while (type == None);
+        
+        if (
+            type == Open &&
+            field->GetGrid(inputRow, inputCol)->GetStatus() == Square::SquareStatus::MineChecker
+            )
+        {
+            cout << "地雷チェックされているため、開けません。" << endl;
+            continue;
         }
         
-    } while (type == None);
+        inputType = type;
+        break;
+            
+    }
     
-    inputType = type;
     cout << endl;
     
 }

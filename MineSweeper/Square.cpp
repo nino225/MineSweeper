@@ -42,5 +42,10 @@ void Square::OnCheckedMine()
         std::cout << "ERROR : このマスはすでに開かれています。" << std::endl;
         return;
     }
-    status = MineChecker;
+    
+    if (status == Invisible)
+        status = MineChecker;
+    else if (status == MineChecker)
+        status = Invisible;
+        
 }
