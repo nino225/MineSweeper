@@ -50,6 +50,8 @@ void Field::initGrid()
 {
     grid.clear();
     
+    srand((unsigned)time(NULL));
+    
     //地雷の場所を決定
     vector< pair<int, int>> minePositions;
     for (int i = 0; i < mines; i++) {
