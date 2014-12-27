@@ -15,7 +15,7 @@ class GameManager
 {
 public:
     
-    const bool IS_DEBUG_MODE = true;
+    const bool IS_DEBUG_MODE = false;
     
     enum TurnStatus
     {
