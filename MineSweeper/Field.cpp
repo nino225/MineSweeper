@@ -52,6 +52,11 @@ bool Field::IsGameClear() const
     return true;
 }
 
+void Field::Open(int row, int col)
+{
+    GetGrid(row, col)->OnOpened();
+}
+
 bool isContained (int row, int col, vector<pair<int, int>>& minePositions)
 {
  

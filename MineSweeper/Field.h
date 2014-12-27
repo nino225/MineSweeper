@@ -42,6 +42,8 @@ public:
     
     bool IsGameClear () const;
     
+    void Open(int row, int col);
+    
 private:
     int rows;
     int cols;

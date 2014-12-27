@@ -205,7 +205,7 @@ void GameManager::open()
     Square* square = field->GetGrid(inputRow, inputCol);
     if (square->GetType() != Square::SquareType::Mine)
     {
-        square->OnOpened();
+        field->Open(inputRow, inputCol);
         
         if (field->IsGameClear())
         {
